@@ -56,6 +56,7 @@ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     <LineBreak /> <LineBreak/>
                     <Run Text="{Binding Error}"/>
                     <LineBreak/>
+                    <Run Text="{Binding PercentComplete}"/>
                     </TextBlock>
                     <WrapPanel Grid.Row="2" HorizontalAlignment="Center">
                         <TextBlock Text="{Binding ToContinue}"/>

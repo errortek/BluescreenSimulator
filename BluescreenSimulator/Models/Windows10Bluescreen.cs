@@ -27,6 +27,8 @@ namespace BluescreenSimulator
 
         public string CustomQRPath { get; set; } = null;
 
-        public string Font { get; set; } = Strings.Font;   
+        public string Font { get; set; }   
+
+        public string EmoticonFont { get; set; }
     }
 }

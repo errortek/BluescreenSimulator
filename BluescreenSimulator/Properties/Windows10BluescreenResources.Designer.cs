@@ -79,6 +79,15 @@ namespace BluescreenSimulator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Segoe UI.
+        /// </summary>
+        public static string EmoticonFont {
+            get {
+                return ResourceManager.GetString("EmoticonFont", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Segoe UI Light.
         /// </summary>
         public static string Font {

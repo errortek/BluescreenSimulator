@@ -141,4 +141,7 @@
   <data name="Font" xml:space="preserve">
     <value>Segoe UI Light</value>
   </data>
+  <data name="EmoticonFont" xml:space="preserve">
+    <value>Segoe UI</value>
+  </data>
 </root>

@@ -107,6 +107,15 @@ namespace BluescreenSimulator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &quot;&quot;.
+        /// </summary>
+        public static string PercentComplete {
+            get {
+                return ResourceManager.GetString("PercentComplete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Press any key to continue.
         /// </summary>
         public static string ToContinue {

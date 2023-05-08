@@ -97,13 +97,20 @@ namespace BluescreenSimulator.ViewModels
             set => SetModelProperty(value);
         }
 
-        [CmdParameter("f", Description = "Specify font to use for the BSOD", FullAlias = "font")]
+        [CmdParameter("-ft", Description = "Specify font to use for the BSOD", FullAlias = "fontfamily")]
         public string Font
         {
             get => Model.Font;
             set => SetModelProperty(value);
         }
-        
+
+        [CmdParameter("-eft", Description = "Specify font to use for the BSOD's emoticon (Win10 BSOD only)", FullAlias = "emoticonfontfamily")]
+        public string EmoticonFont
+        {
+            get => Model.EmoticonFont;
+            set => SetModelProperty(value);
+        }
+
         public override bool SupportsRainbow => true;
     }
 }
