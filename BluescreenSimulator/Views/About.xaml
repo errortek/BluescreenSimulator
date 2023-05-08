@@ -70,7 +70,7 @@
             <TextBlock Padding="10,0,0,0">
             <Hyperlink NavigateUri="https://www.youtube.com/@jpb896" Click="Hyperlink_Click">jpb's YouTube Channel</Hyperlink>
             </TextBlock>
-            <TextBlock Padding="10,10,0,0">
+            <TextBlock Padding="10,10,0,0" TextWrapping="WrapWithOverflow">
             Thank you to FlyTech Videos for making this brilliant software (and making it open source, which allowed me to adapt it), please subscribe to them!
             </TextBlock>
             <TextBlock Padding="10,0,0,0">
