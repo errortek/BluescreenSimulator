@@ -26,5 +26,7 @@ namespace BluescreenSimulator
         public bool CustomQR { get; set; } = false;
 
         public string CustomQRPath { get; set; } = null;
+
+        public string Font { get; set; } = Strings.Font;   
     }
 }

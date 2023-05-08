@@ -79,6 +79,15 @@ namespace BluescreenSimulator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Segoe UI Light.
+        /// </summary>
+        public static string Font {
+            get {
+                return ResourceManager.GetString("Font", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your PC ran into a problem and needs to restart. We&apos;re just.
         /// </summary>
         public static string MainText1 {

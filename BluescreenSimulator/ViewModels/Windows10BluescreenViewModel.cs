@@ -96,6 +96,13 @@ namespace BluescreenSimulator.ViewModels
             get => Model.TextDelay;
             set => SetModelProperty(value);
         }
+
+        [CmdParameter("f", Description = "Specify font to use for the BSOD", FullAlias = "font")]
+        public string Font
+        {
+            get => Model.Font;
+            set => SetModelProperty(value);
+        }
         
         public override bool SupportsRainbow => true;
     }

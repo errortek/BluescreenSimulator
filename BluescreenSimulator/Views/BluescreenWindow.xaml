@@ -8,8 +8,8 @@
         xmlns:converters="clr-namespace:BluescreenSimulator.Converters"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        FontFamily="Segoe UI Light"
-        FontWeight="Bold"
+        FontFamily="{Binding Font}"
+        
         FontSize="30"
         PreviewKeyDown="Window_PreviewKeyDown"
         Foreground="{converters:ColorBinding ForegroundColor}"

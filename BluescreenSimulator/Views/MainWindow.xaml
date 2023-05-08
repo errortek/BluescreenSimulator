@@ -54,7 +54,8 @@
 			<RowDefinition Height="auto" />
 			<RowDefinition Height="auto" />
 			<RowDefinition Height="auto" />
-		</Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
 		<Grid.Resources>
 			<Style TargetType="Label" BasedOn="{StaticResource LabelFormStyle}" />
 			<Style TargetType="TextBox" BasedOn="{StaticResource TextBoxFormStyle}" />
@@ -85,6 +86,11 @@
 								<RowDefinition Height="auto" />
 								<RowDefinition Height="auto" />
 								<RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
 							</Grid.RowDefinitions>
 							<Grid.Resources>
 								<Style TargetType="Label" BasedOn="{StaticResource LabelFormStyle}" />
@@ -117,7 +123,10 @@
 							<Label Grid.Row="6" Content="Stop code" />
                             <TextBox Grid.Row="6" Text="{Binding StopCode}" TextWrapping="Wrap" AcceptsReturn="True"/>
 
-                            <UniformGrid Grid.Row="11" Grid.ColumnSpan="5" Columns="3" Rows="2">
+                            <Label Grid.Row="7" Content="Font" />
+                            <TextBox Name="Font" Grid.Row="7" Text="{Binding Font}" TextWrapping="Wrap" AcceptsReturn="True"/>
+
+                            <UniformGrid Grid.Row="11" Grid.ColumnSpan="3" Columns="3" Rows="2">
                                 <RadioButton IsChecked="True" Content="Show QR code" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 <RadioButton IsChecked="{Binding UseOriginalQR}" Content="Use original QR code" HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 <RadioButton IsChecked="{Binding CustomQR}" Content="Use custom QR code" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="CustomQR_Checked" />
