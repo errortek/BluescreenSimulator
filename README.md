@@ -13,3 +13,10 @@ How to contribute:
 	- `git commit -m "Commit message explaining your changes"`
 	- `git push`
 - When you're done, create a Pull Request from your repository to this repository's master branch.
+
+## What to do if this is flagged as malware by an AV?
+
+If you receive a notification from Defender or from another AV saying that this is a threat, just put it on the whitelist (in Defender, it's called 'Allowed Threats') - this is not malware<br>
+Example of a detection - Detection in Windows Defender:
+![image](https://user-images.githubusercontent.com/100033309/236887017-d03a448f-bce2-4c3b-aee3-570b863a1b52.png)
+(Once again, the software is *nothing* to be afraid of, as shown in the Defender screenshot, it's just a 'joke program', so it's nothing serious (not malware!))
