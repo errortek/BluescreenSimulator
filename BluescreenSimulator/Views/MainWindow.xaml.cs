@@ -145,7 +145,7 @@ namespace BluescreenSimulator.Views
                 [SourceFiles0]
                 %FILE0%=
                 %FILE1%=";
-            }
+
 
             var SEDPath = Path.GetTempPath() + "\\optionfile.SED";
 
