@@ -50,18 +50,8 @@ namespace BluescreenSimulator.Views
 
         private void SetUpQR()
         {
-            /*if (_vm.StopCode.Equals(Windows10BluescreenResources.StopCode, StringComparison.CurrentCultureIgnoreCase)) return;
-            var generator = new QRCodeGenerator();
-            var data = generator.CreateQrCode(_vm.MoreInfo, QRCodeGenerator.ECCLevel.Q);
-            var qr = new QRCode(data);
-            var bitmap = qr.GetGraphic(20, System.Drawing.Color.FromArgb(10, 112, 169), System.Drawing.Color.White,
-                true);
-            var source = Imaging.CreateBitmapSourceFromHBitmap(bitmap.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
-            */
-            if (_vm.CustomQR)
-            {
-                QrCodeImage.Source = new BitmapImage(new Uri(_vm.CustomQRPath));
-            } else if (_vm.UseOriginalQR)
+            
+            if (_vm.UseOriginalQR)
             {
                 QrCodeImage.Source = Imaging.CreateBitmapSourceFromHBitmap(Properties.Resources.qr.GetHbitmap(), IntPtr.Zero, Int32Rect.Empty, BitmapSizeOptions.FromEmptyOptions());
             }
@@ -85,7 +75,7 @@ namespace BluescreenSimulator.Views
                 _vm.Progress = 0;
             }
         }
-        private async Task BeginTextDelay(float delay)
+        private async Task BeginTextDelay(double delay)
         {
             //Please find a better way to do it
             MainText1.Visibility = Visibility.Hidden;

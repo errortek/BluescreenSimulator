@@ -44,15 +44,7 @@
             • The progress counter advances automatically. <LineBreak />
             • A command line interface exists. Run <TextBlock FontFamily="Consolas">BluescreenSimulator --help</TextBlock> for more info.
         </TextBlock>
-            <TextBlock Padding="10,10,0,0" FontWeight="Bold">
-            What is Unsafe Mode? How to enable it?
-            </TextBlock>
-            <TextBlock Padding="10,0,0,0" TextWrapping="Wrap">
-            In Unsafe Mode, you can specify a CMD command which will be run after the BSOD "completes" (e.g. a reboot command).
-            Because this is potentially dangerous, you have to explicitly enable this by running the program from the command
-            line with the argument "--enable-unsafe", like this: <TextBlock Margin="10,0,0,0" FontFamily="Consolas">BluescreenSimulator --enable-unsafe</TextBlock>
-        </TextBlock>
-            <TextBlock Padding="10,10,10,0">
+        <TextBlock Padding="10,10,10,0">
             Bluescreen Simulator is open source!
             </TextBlock>
             <TextBlock Padding="10,0,0,0">
@@ -80,6 +72,8 @@
             This software is using the MIT-licensed library 'NDesk.Options'. |
             <Hyperlink NavigateUri="https://opensource.org/licenses/mit-license.php" Click="Hyperlink_Click">MIT License</Hyperlink> |
             <Hyperlink NavigateUri="http://www.ndesk.org/Options" Click="Hyperlink_Click">Project page</Hyperlink>
+        </TextBlock>
+    </StackPanel>
             </TextBlock>
             <TextBlock Padding="10,10,0,0">
              This software is using the MIT-licensed library 'QRCoder'. |
