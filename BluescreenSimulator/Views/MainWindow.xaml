@@ -133,7 +133,6 @@
                             <UniformGrid Grid.Row="11" Grid.ColumnSpan="3" Columns="3" Rows="2">
                                 <RadioButton IsChecked="True" Content="Show QR code" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 <RadioButton IsChecked="{Binding UseOriginalQR}" Content="Use original QR code" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                <RadioButton IsChecked="{Binding CustomQR}" Content="Use custom QR code" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="CustomQR_Checked" />
                                 <RadioButton IsChecked="{Binding HideQR}" Content="Hide QR code completely" HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 <StackPanel Orientation="Horizontal">
                                     <Label Content="Text Delay (in seconds)" />

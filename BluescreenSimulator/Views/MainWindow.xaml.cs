@@ -27,10 +27,8 @@ namespace BluescreenSimulator.Views
 
         private void ShowBSOD(object sender, RoutedEventArgs e)
         {
-            if (CheckData())
-            {
-                CurrentBluescreen.ShowView();
-            }
+            CurrentBluescreen.ShowView();
+
         }
 
         private void OpenAbout(object sender, RoutedEventArgs e)
@@ -117,7 +115,8 @@ namespace BluescreenSimulator.Views
                 %FILE0%=
                 %FILE1%=
                 %FILE2%=";
-            } else
+            }
+            else
             {
                 iexpressSED =
                 $@"
@@ -145,62 +144,45 @@ namespace BluescreenSimulator.Views
                 %FILE1%=";
 
 
-            var SEDPath = Path.GetTempPath() + "\\optionfile.SED";
+                var SEDPath = Path.GetTempPath() + "\\optionfile.SED";
 
-            File.WriteAllText(SEDPath, iexpressSED);
-            Process p = new Process();
-            p.StartInfo.FileName = "C:\\Windows\\system32\\iexpress.exe";
-            p.StartInfo.Arguments = $"/N {SEDPath}";
-            p.StartInfo.CreateNoWindow = true;
-            p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            p.Start();
-            p.WaitForExit();
-            File.Delete(SEDPath);
-            File.Delete(commandFile);
-            if (File.Exists(qrFile))
-                File.Delete(qrFile);
-            MessageBox.Show("Your EXE-File has been created.", "BluescreenWindow Simulator", MessageBoxButton.OK, MessageBoxImage.Information);
-        }
-
-        private string GenerateCommand()
-        {
-            var success = CheckData();
-            if (!success) return "";
-            return CurrentBluescreen.CreateCommandParameters();
-        }
-
-
-        private bool CheckData()
-        {
-            if (!string.IsNullOrWhiteSpace(CurrentBluescreen.CmdCommand))
-            {
-                var messageBoxResult = MessageBox.Show("Using a CMD command can be dangerous. " +
-                    "I will not be responsible for any data loss or other damage arising from irresponsible or careless use of the CMD command option. " +
-                    "Please re-check your command to make sure that you execute what you intended:\r\n\r\n" + CurrentBluescreen.CmdCommand.Trim() + "\r\n\r\n" + "Do you want to proceed?",
-                    "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-                if (messageBoxResult == MessageBoxResult.No)
-                {
-                    return false;
-                }
+                File.WriteAllText(SEDPath, iexpressSED);
+                Process p = new Process();
+                p.StartInfo.FileName = "C:\\Windows\\system32\\iexpress.exe";
+                p.StartInfo.Arguments = $"/N {SEDPath}";
+                p.StartInfo.CreateNoWindow = true;
+                p.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                p.Start();
+                p.WaitForExit();
+                File.Delete(SEDPath);
+                File.Delete(commandFile);
+                if (File.Exists(qrFile))
+                    File.Delete(qrFile);
+                MessageBox.Show("Your EXE-File has been created.", "BluescreenWindow Simulator", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            return true;
-        }
 
-        private void CustomQR_Checked(object sender, RoutedEventArgs e)
-        {
-            System.Windows.Forms.OpenFileDialog ofd = new System.Windows.Forms.OpenFileDialog();
-            ofd.Filter = "Image Files (*.jpg, *.png, *.jpeg, *.bmp, *.gif)|*.jpg;*.png;*.jpeg;*.bmp;*.gif";
-            ofd.Title = "Select a image file to use for the QR code (Use an image with 1:1 aspect ratio for best results)";
-            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            string GenerateCommand()
             {
-                Windows10BluescreenViewModel w10b = CurrentBluescreen as Windows10BluescreenViewModel;
-                w10b.CustomQRPath = ofd.FileName;
-            } else
+                var success = CheckData();
+                if (!success) return "";
+                return CurrentBluescreen.CreateCommandParameters();
+            }
+
+
+            bool CheckData()
             {
-                Windows10BluescreenViewModel w10b = CurrentBluescreen as Windows10BluescreenViewModel;
-                w10b.CustomQR = false;
-                w10b.CustomQRPath = "";
-                w10b.UseOriginalQR = true;
+                if (!string.IsNullOrWhiteSpace(CurrentBluescreen.CmdCommand))
+                {
+                    var messageBoxResult = MessageBox.Show("Using a CMD command can be dangerous. " +
+                        "I will not be responsible for any data loss or other damage arising from irresponsible or careless use of the CMD command option. " +
+                        "Please re-check your command to make sure that you execute what you intended:\r\n\r\n" + CurrentBluescreen.CmdCommand.Trim() + "\r\n\r\n" + "Do you want to proceed?",
+                        "Warning", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                    if (messageBoxResult == MessageBoxResult.No)
+                    {
+                        return false;
+                    }
+                }
+                return true;
             }
         }
     }
